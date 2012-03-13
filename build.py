@@ -58,9 +58,10 @@ class Card(object):
 class GoalCard(Card):
     def __init__(self, goal_type, requirements, goal, *args, **kwargs):
         super(GoalCard, self).__init__(*args, **kwargs)
-        self.draw_wrapped_text(goal_type.upper(), ((0.25, 0.25), (2, 0.5)), font_size=48)
-        self.draw_wrapped_text(goal, ((0.25, 0.5), (2.25, 2.5)), font_size=40)
-        self.draw_wrapped_text(requirements, ((0.25, 2.5), (2.25, 3.25)))
+        self.load_background(os.path.join(BASE, "images", "goal.png"))
+        self.draw_wrapped_text(goal_type.upper(), ((0.32, 0.64), (2.22, 0.86)), font_size=48)
+        self.draw_wrapped_text(goal, ((0.33, 0.96), (2.25, 1.95)), font_size=40)
+        self.draw_wrapped_text(requirements, ((0.29, 2.41), (2.25, 3.18)), font_size=36)
 
 class EmailCard(Card):
     def __init__(self, subject, message, lights, flames, *args, **kwargs):
