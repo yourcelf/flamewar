@@ -1,0 +1,6 @@
+*.pyc
+*.swp
+.idea*
+.DS_Store
+cards/
+*~

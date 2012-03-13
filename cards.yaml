@@ -1,0 +1,92 @@
+goals:
+  share info:
+    requirements: "Goal must be read by everyone."
+    cards:
+      - "We've been invited to a community event!  It's awesome, let's go."
+      - "The city has changed recycling policy.  From now on, #1 and #2 plastics go out on Monday, and #3 and #4 plastics go out on Tuesday.  Paper products are Friday, trash is Thursday, and glass bottles need to be balanced on the edge of the curb."
+      - "Article on new oppresive policy being passed by the city"
+      - "A member just quit!"
+  express emotion:
+    requirements: "Goal must be read by everyone.\nMaximum 3 flames."
+    cards:
+      - "YOU PEOPLE ARE MAKING ME CRAZY"
+      - "Why do I have to clean the sink, every damn time?"
+      - "Thanks for a wonderful party last night!"
+      - "No one takes into account what I have to say! You guys are authoritarian!"
+      - "I am bored!"
+  decide something:
+    requirements: "Goal must be read by everyone."
+    cards:
+      - "URGENT!  The water heater exploded; we need a plumber. Authorize $1000 to buy a new one?"
+      - "A visitor from out of town is coming tomorrow.  Can we host them?"
+      - "Should we attend this protest and show our solidarity?"
+    schedule something:
+      - "Group retreat! Schedule a weekend where everyone can be there for 8 hours."
+      - "My work rescheduled me.  Can we change the meeting time?"
+attention:
+  - "Just another day at the office.  Read 4."
+  - "You've gone on vacation to Hawaii. Read 0 for the rest of this goal phase."
+  - "A meeting's been canceled!  You have lots of time for email. Read 8."
+  - "Public transportation with wi-fi.  Read 2."
+action:
+  email:
+    - subject: "Constructive comment"
+      message: "msg..."
+      lights: 3
+      flames: 0
+    - subject: "Fast, informative reply"
+      message: "I got your message.  The widgets are in the wonkets, and the foo is by the bar.  We'll have to herp before we derp, but that should be easy; I volunteer to take that on."
+      lights: 2
+      flames: 0
+    - subject: "Destructive comment"
+      message: "msg..."
+      lights: 1
+      flames: 2
+    - subject: "Auto reply"
+      message: "msg..."
+      lights: 0
+      flames: 0
+    - subject: "Virus!"
+      message: "Each player that reads this email subtracts 2 points from their score for this round."
+      lights: 0
+      flames: 1
+    - subject: "Phishing scam!"
+      message: "Each player that reads this email subtracts 2 points from their score for this round."
+      lights: 0
+      flames: 1
+    - subject: "Overshare!"
+      message: "msg..."
+      lights: 0
+      flames: 1
+    - subject: "Misdelivered sexting!"
+      message: "msg..."
+      lights: -1
+      flames: 0
+    - subject: "Rambling wall of text."
+      message: "Requires 2 read chips from each player."
+      lights: 1
+      flames: 1
+    - subject: "Spam."
+      message: "msg..."
+      lights: 0
+      flames: 0
+    - subject: "Racist forward!"
+      message: "msg..."
+      lights: -2
+      flames: 2
+    - subject: "Peacemaker"
+      message: "msg..."
+      lights: 0
+      flames: -2
+    - subject: "SHOUTING"
+      message: "msg..."
+      lights: 1
+      flames: 1
+  interrupt:
+    - title: "FLAME WAR!"
+      description: "The old goal is superceded by this goal.  The new goal is to get at least 10 flames!! Immediately play up to 2 emails which have more flames than lights."
+    - title: "Epic thread!"
+      description: "Double the required number of lights, but allow double the flames, for the goal card.  Play two email cards immediately."
+    - title: "Misdelivered!"
+      description: "Play on any email currently on the table.  The address was mistyped.  Take the email out of play, and discard any read chips."
+
