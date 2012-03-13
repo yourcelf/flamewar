@@ -55,9 +55,6 @@ class Card(object):
     def save(self, filename, fmt=None):
         return self.im.save(filename, fmt)
 
-    def decorate(self):
-        raise NotImplementedError
-
 class GoalCard(Card):
     def __init__(self, goal_type, requirements, goal, *args, **kwargs):
         super(GoalCard, self).__init__(*args, **kwargs)
