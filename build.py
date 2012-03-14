@@ -6,8 +6,12 @@ from PIL import Image, ImageDraw, ImageFont
 import yaml
 
 BASE = os.path.dirname(__file__)
-FONT = "/usr/share/fonts/truetype/msttcorefonts/Courier_New.ttf"
-FONT = "/usr/share/fonts/truetype/msttcorefonts/Andale_Mono.ttf"
+#FONT = "/usr/share/fonts/truetype/msttcorefonts/Courier_New.ttf"
+#FONT = "/usr/share/fonts/truetype/msttcorefonts/Andale_Mono.ttf"
+FONT = "/usr/share/fonts/truetype/ubuntu-font-family/UbuntuMono-R.ttf"
+#FONT = "/usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf"
+#FONT = "/usr/share/fonts/truetype/freefont/FreeSans.ttf"
+#FONT = "/usr/share/fonts/truetype/ttf-liberation/LiberationMono-Regular.ttf"
 
 class Card(object):
     density = 300
@@ -79,7 +83,7 @@ class InterruptCard(Card):
         super(InterruptCard, self).__init__(*args, **kwargs)
         self.load_background(os.path.join(BASE, "images", "interrupt.png"))
         self.draw_wrapped_text(title, ((0.25, 0.85), (2.25, 1.35)), font_size=64)
-        self.draw_wrapped_text(description, ((0.25, 1.35), (2.25, 3.25)), font_size=36)
+        self.draw_wrapped_text(description, ((0.25, 1.35), (2.25, 3.25)), font_size=40)
 
 class AttentionCard(Card):
     def __init__(self, description, *args, **kwargs):
@@ -108,6 +112,7 @@ def build():
 
     count = 0
     for email in defs['action']['email']:
+        print email['message']
         EmailCard(**email).save(os.path.join(out, "email-%s.png" % count))
         count += 1
 

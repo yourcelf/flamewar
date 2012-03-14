@@ -6,7 +6,8 @@ BASE = os.path.dirname(__file__)
 
 def build():
     with lcd(BASE):
-        local("rm cards/*")
+        with settings(warn_only=True):
+            local("rm cards/*")
         local("python build.py")
 
 def fetch_build():
@@ -22,10 +23,9 @@ def print_prep():
     outdir = os.path.join(BASE, "print")
     with lcd(BASE):
         local("rm -r %s" % outdir)
-    with lcd(BASE):
         local("mkdir -p %s" % outdir)
     card_dir = os.path.join(BASE, "cards")
-    images = [os.path.join(card_dir, f) for f in os.listdir(card_dir)]
+    images = [os.path.join(card_dir, f) for f in sorted(os.listdir(card_dir))]
     first = Image.open(images[0])
     for i in range(0, len(images), 4):
         out = Image.new(

@@ -1,13 +1,13 @@
 goals:
   share info:
-    requirements: "- Goal must be read by all"
+    requirements: "- Goal must be read by all\n5 points"
     cards:
       - "We've been invited to a community event!  It's awesome, let's go."
       - "The city has changed recycling policy.  From now on, #1 and #2 plastics go out on Monday, and #3 and #4 plastics go out on Tuesday.  Paper..."
       - "Article on new oppresive policy being passed by the city"
       - "A member just quit!"
   express emotion:
-    requirements: "- Goal must be read by all\n- No more than 3 flames"
+    requirements: "- Goal must be read by all\n- No more than 3 flames\n10 points"
     cards:
       - "YOU PEOPLE ARE MAKING ME CRAZY"
       - "Why do I have to clean the sink, every damn time?"
@@ -15,13 +15,13 @@ goals:
       - "No one takes into account what I have to say! You guys are authoritarian!"
       - "I am bored!"
   decide something:
-    requirements: "- No more than 3 flames\n- At least 5 lights"
+    requirements: "- No more than 3 flames\n- At least 5 lights\n15 points"
     cards:
       - "URGENT!  The water heater exploded; we need a plumber. Authorize $1000 to buy a new one?"
       - "A visitor from out of town is coming tomorrow.  Can we host them?"
       - "Should we attend this protest and show our solidarity?"
   schedule something:
-    requirements: "- Goal must be read by all\n- No more than 3 flames\n- 1 light from each player"
+    requirements: "- Goal must be read by all\n- No more than 3 flames\n- 1 light from each player\n20 points"
     cards:
       - "Group retreat! Schedule a weekend where everyone can be there for 8 hours."
       - "My work rescheduled me.  Can we change the meeting time?"
@@ -30,8 +30,39 @@ attention:
   - "You've gone on vacation to Hawaii. Read 0 for the rest of this goal phase."
   - "A meeting's been canceled!  You have lots of time for email. Read 8."
   - "Public transportation with wi-fi.  Read 2."
+  - The office gossip stopped by.  you are unfortunately occupied.  Read 2.
+  - You have to breastfeed your child.  Read 2.
+  - You have to pick your child up at swim practice.  Read 2.
+  - No one came to your office hours!  Read 8.
+  - You've been so efficient today.  Read 6.
+  - That cup of coffee has done wonders for your productivity.  Read 6.
+  - Software updates took all afternoon.  Read 1.
+  - Happy hour!  Leave work early. Read 1.
+  - Stuck in a meeting.  Read 2.
+  - Morning traffic was crazy, got to work late.  Read 2.
+  - Spilled soup on your shirt, and need to clean it before meeting with  supervisor.  Read 2.
+  - Email account got hacked, you can't log in.  Read 0.
+  - Internet is down.  Read 0.
+  - Dentist appointment got canceled.  Read 8. But brush your teeth.
+  - Waiting in doctor's office.  Read 6 on your mobile.
+  - Called in to work an extra shift. Read 2.
+  - You got fired. Read 8.
+  - Your laptop was stolen! Read 0.
+  - Sun, cool breeze, new buds on the trees.... Read 1.
+  - Insomnia... Read 8.
 
 action:
+  interrupt:
+    - title: "FLAME WAR!"
+      description: "The old goal is superceded by this goal.  The new goal is  to get at least 10 flames!! Immediately play up to 2 emails which have  more flames than lights."
+    - title: "Epic thread!"
+      description: "Double the required number of lights, but allow double  the flames, for the goal card.  Play two email cards immediately."
+    - title: "Misdelivered!"
+      description: "Play on any email currently on the table.  The address  was mistyped.  Take the email out of play, and discard any read chips."
+    - title: "Voluntold!"
+      description: "Play on a person whom you are volunteering to do work.  That person must immediately read two emails and send two emails."
+
+
   email:
     - subject: "Constructive comment"
       message: "The event was great! Thanks so much for putting it together!"
@@ -93,11 +124,144 @@ action:
       message: "See attached."
       lights: 0
       flames: 0
-  interrupt:
-    - title: "FLAME WAR!"
-      description: "The old goal is superceded by this goal.  The new goal is to get at least 10 flames!! Immediately play up to 2 emails which have more flames than lights."
-    - title: "Epic thread!"
-      description: "Double the required number of lights, but allow double the flames, for the goal card.  Play two email cards immediately."
-    - title: "Misdelivered!"
-      description: "Play on any email currently on the table.  The address was mistyped.  Take the email out of play, and discard any read chips."
+    - subject: "Definite block"
+      message: "I completely disagree.  Why wasn't I consulted earlier?"
+      lights: 1
+      flames: 1
+    - subject: "Autonomous action"
+      message: "I'm going to spend $10,000 from our funds for a new BBQ M1 5000 roaster.  If anyone opposes, speak up now."
+      lights: 1
+      flames: 1
+    - subject: "Explicit process"
+      message: "I'd like to get your input on this proposal. Please respond within the next 2 days, then I'll summarize the responses, and suggest a process to move forward."
+      lights: 3
+      flames: 0
+    - subject: "Distracting footer"
+      message: "OK, thanks.\n\n\"I disagree with what you say, but will defend to the death your right to say it.\" ~Voltaire\nFOLLOW ME ON TWITTER: @footyfun\nMy blog: http://volt-air.li\n~~~!!!####!!!!~~~"
+      lights: 0
+      flames: 0
+    - subject: "Thread hijack."
+      message: "Has anyone seen my red socks with the orange hearts on them?  I haven't seen them since I did laundry last week....\n\nKate wrote:\n> What policy can we\n> agree on for budgeting\n> the money from the\n> campaign?"
+      lights: 0
+      flames: 1
+    - subject: "Passive aggression."
+      message: "It's alright.  If you don't like me, I can leave.  I don't have to be a part of this group.  I don't mind."
+      lights: 0
+      flames: 2
+    - subject: "Bad joke"
+      message: "Did you hear the one about the grass-fed chicken crossing the road?"
+      lights: 0
+      flames: 0
+    - subject: "Paranoia"
+      message: "I don't trust Nicole. She asks too many personal questions. She's probably working for the FBI."
+      lights: 1
+      flames: 1
+    - subject: "Cool talk"
+      message: "Hey. There will be a great speaker at the university this Friday. It's about communalist ants."
+      lights: 1
+      flames: 0
+    - subject: "Group out of the loop"
+      message: "Hey Pedro. Remember when we did that thing that other day with those other people. HA HA"
+      lights: 0
+      flames: 0
+    - subject: "Travel"
+      message: "We should all carpool to the conference in Michigan over the weekend"
+      lights: 1
+      flames: 0
+    - subject: "Never mind"
+      message: "Ooops. That message was meant for my partner! I'm soooo sorry. He does have a sexy forehead though."
+      lights: 0
+      flames: 0
+    - subject: "Meeting reminder"
+      message: "Just so everyone is aware. We have a meeting at midnight behind the tree in the middle of the park."
+      lights: 1
+      flames: 0
+    - subject: "For the party"
+      message: "I am bringing lentil soup as my contribution."
+      lights: 1
+      flames: 0
+    - subject: "Who is Joe?"
+      message: "Wait. Who is this Joe that just responded to the thread?"
+      lights: 0
+      flames: 0
+    - subject: "Last minute reminder"
+      message: "Hey y'all! There is this event happening in one minute!"
+      lights: 1
+      flames: 0
+    - subject: "Mobile eyes"
+      message: "Sent from my Motorizon I-Berry, apologies for typos and brevity."
+      lights: 0
+      flames: 0
+    - subject: "[FWD] private message"
+      message: "Thanks for your feedback, Jane.  What do the rest of you think? \n\nJane wrote:\n> Just between you and me,\n> I think this is a\n>  mistake..."
+      lights: 1
+      flames: 1
+    - subject: "I agree"
+      message: "+1"
+      lights: 1
+      flames: 0
+    - subject: "I disagree"
+      message: "-1.  I've got some general concerns with this direction.  I'd prefer it if we...."
+      lights: 1
+      flames: 0
+    - subject: "Great article"
+      message: "Mike wrote this awesome piece. Check it out."
+      lights: 1
+      flames: 0
+    - subject: "UNSUSCRIBE ME PLEASE"
+      message: "Unsubscribe!!!!1!1"
+      lights: 0
+      flames: 1
+    - subject: "Alliance"
+      message: "This is a great group that is working on all the same issues we are. Let's collaborate!"
+      lights: 1
+      flames: 0
+    - subject: "Large attachment"
+      message: "Message size: 14MB.\n\nLoading.........................\n\n\nREQUIRES 2 READ CHIPS FROM EACH PLAYER"
+      lights: 0
+      flames: 0
+    - subject: "Workgroup suggestion"
+      message: "I wanna start a group dealing with cats.  I think we really need to address the issue of toxoplasma parasites giving us psychological problems."
+      lights: 1
+      flames: 0
+    - subject: "Helpful reflection"
+      message: "Thanks for a good job at the event, everyone!  Here are some thoughts about what we can do next time..."
+      lights: 1
+      flames: 0
+    - subject: "Broken unicode."
+      message: "ಠ_ಠ\n\n┬─┬ ノ( ゜-゜ノ) \n\n (╯°□°)╯︵ ┻━┻\n\n"
+      lights: 0
+      flames: 1
+    - subject: "Celebratory message"
+      message: "Happy birthday Jess!!"
+      lights: 0
+      flames: 0
+    - subject: "Not a racist, but."
+      message: "Not to sound racist, but you make it sound as though calling someone a nazi is worse than being a member of a non-aryan race."
+      lights: 0
+      flames: 2
+    - subject: "Minutes from meeting"
+      message: "Here are the minutes for last night's meeting.  I also posted them to the wiki..."
+      lights: 1
+      flames: 0
+    - subject: "Emotional ambiguity"
+      message: "The presentation was interesting. It really had qualities. I felt strongly about it. I think you're really something."
+      lights: 1
+      flames: 1
+    - subject: "Clear ask."
+      message: "I need to know what you think about the composting situation.  Can you please respond to me off-list with your opinion as to whether we get a new compost bin?  I'll compile the responses and send them back to the list."
+      lights: 1
+      flames: 0
+    - subject: "Repetition."
+      message: "I have an idea: Let's storm the gates.\n\nRebecca wrote:\n> How about this: we\n> could storm the gates.\n>\n> Elizabeth wrote:\n>> What do you think about\n>> storming the gates?"
+      lights: 1
+      flames: 1
+    - subject: "Technical bottleneck"
+      message: "Does anyone know how to sign people up for this email list?"
+      lights: 0
+      flames: 1
+    - subject: "Thoughts?"
+      message: "I've been thinking that the really important thing is for us to reconsider what our fundamental approach to life is.  I'm not sure I really want to be part of a 'society' anymore, but I'm not sure.  I mean, the capitalist system is really the root of the problem, and maybe what we should do is just address that.  I'm not sure that we can really be a true collective as long as we're continuing to participate in a larger system of messed up power relationships.\n\nThoughts?"
+      lights: 1
+      flames: 1
 
