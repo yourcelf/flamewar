@@ -1,2 +1,3 @@
 pyyaml
+fabric
 PIL
