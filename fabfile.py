@@ -18,7 +18,7 @@ def fetch_build():
 
 def print_prep():
     """ 
-    Prepare for printing on 5x7 cardstock. Combine 2.5x3.5 images four by four.
+    Prepare for printing on 8.5x11 cardstock. Combine 2.5x3.5 images 3x3.
     """
     outdir = os.path.join(BASE, "print")
     with lcd(BASE):
@@ -27,21 +27,21 @@ def print_prep():
     card_dir = os.path.join(BASE, "cards")
     images = [os.path.join(card_dir, f) for f in sorted(os.listdir(card_dir))]
     first = Image.open(images[0])
-    for i in range(0, len(images), 4):
+    for i in range(0, len(images), 9):
         out = Image.new(
                 'RGBA', 
-                (first.size[0] * 2, first.size[1] * 2), 
+                (first.size[0] * 3, first.size[1] * 3), 
                 (255,255,255,255)
         )
-        for j in range(0, 4):
+        for j in range(0, 9):
             if i + j < len(images):
                 im = Image.open(images[i + j])
                 out.paste(Image.open(images[i + j]), 
                         (
-                            im.size[0] * (j % 2),
-                            im.size[1] * (int(j / 2)),
-                            first.size[0] * (j % 2 + 1),
-                            first.size[1] * (int(j / 2) + 1),
+                            im.size[0] * (j % 3),
+                            im.size[1] * (int(j / 3)),
+                            first.size[0] * (j % 3 + 1),
+                            first.size[1] * (int(j / 3) + 1),
                         )
                 )
         out.save(os.path.join(outdir, "card-%i.png" % i))

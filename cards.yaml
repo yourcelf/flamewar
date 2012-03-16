@@ -1,13 +1,13 @@
 goals:
   share info:
-    requirements: "- Goal must be read by all\n5 points"
+    lights: 2
     cards:
       - "We've been invited to a community event!  It's awesome, let's go."
       - "The city has changed recycling policy.  From now on, #1 and #2 plastics go out on Monday, and #3 and #4 plastics go out on Tuesday.  Paper..."
       - "Article on new oppresive policy being passed by the city"
       - "A member just quit!"
   express emotion:
-    requirements: "- Goal must be read by all\n- No more than 3 flames\n10 points"
+    lights: 4
     cards:
       - "YOU PEOPLE ARE MAKING ME CRAZY"
       - "Why do I have to clean the sink, every damn time?"
@@ -15,41 +15,41 @@ goals:
       - "No one takes into account what I have to say! You guys are authoritarian!"
       - "I am bored!"
   decide something:
-    requirements: "- No more than 3 flames\n- At least 5 lights\n15 points"
+    lights: 6
     cards:
       - "URGENT!  The water heater exploded; we need a plumber. Authorize $1000 to buy a new one?"
       - "A visitor from out of town is coming tomorrow.  Can we host them?"
       - "Should we attend this protest and show our solidarity?"
   schedule something:
-    requirements: "- Goal must be read by all\n- No more than 3 flames\n- 1 light from each player\n20 points"
+    lights: 8
     cards:
       - "Group retreat! Schedule a weekend where everyone can be there for 8 hours."
       - "My work rescheduled me.  Can we change the meeting time?"
 attention:
-  - "Just another day at the office.  Read 4."
-  - "You've gone on vacation to Hawaii. Read 0 for the rest of this goal phase."
-  - "A meeting's been canceled!  You have lots of time for email. Read 8."
-  - "Public transportation with wi-fi.  Read 2."
+  - "A meeting's been canceled!  You have lots of time for email. Read 4."
+  - You got fired. Read 4.
+  - Insomnia... Read 4.
+  - No one came to your office hours!  Read 4.
+  - That cup of coffee has done wonders for your productivity.  Read 4.
+  - You've been so efficient today.  Read 4.
+  - "Just another day at the office.  Read 3."
+  - Dentist appointment got canceled.  Read 3. But brush your teeth.
+  - Waiting in doctor's office.  Read 3 on your mobile.
+  - "Public transportation with wi-fi.  Read 3."
   - The office gossip stopped by.  you are unfortunately occupied.  Read 2.
   - You have to breastfeed your child.  Read 2.
-  - You have to pick your child up at swim practice.  Read 2.
-  - No one came to your office hours!  Read 8.
-  - You've been so efficient today.  Read 6.
-  - That cup of coffee has done wonders for your productivity.  Read 6.
-  - Software updates took all afternoon.  Read 1.
-  - Happy hour!  Leave work early. Read 1.
-  - Stuck in a meeting.  Read 2.
+  - Software updates took all afternoon.  Read 2.
   - Morning traffic was crazy, got to work late.  Read 2.
-  - Spilled soup on your shirt, and need to clean it before meeting with  supervisor.  Read 2.
+  - Stuck in a meeting.  Read 1.
+  - Spilled soup on your shirt, and need to clean it before meeting with  supervisor.  Read 1.
+  - Called in to work an extra shift. Read 1.
+  - Sun, cool breeze, new buds on the trees.... Read 1.
+  - You have to pick your child up at swim practice.  Read 0.
+  - "You've gone on vacation to Hawaii. Read 0."
+  - Happy hour!  Leave work early. Read 0.
   - Email account got hacked, you can't log in.  Read 0.
   - Internet is down.  Read 0.
-  - Dentist appointment got canceled.  Read 8. But brush your teeth.
-  - Waiting in doctor's office.  Read 6 on your mobile.
-  - Called in to work an extra shift. Read 2.
-  - You got fired. Read 8.
   - Your laptop was stolen! Read 0.
-  - Sun, cool breeze, new buds on the trees.... Read 1.
-  - Insomnia... Read 8.
 
 action:
   interrupt:
@@ -229,7 +229,7 @@ action:
       lights: 1
       flames: 0
     - subject: "Broken unicode."
-      message: "ಠ_ಠ\n\n┬─┬ ノ( ゜-゜ノ) \n\n (╯°□°)╯︵ ┻━┻\n\n"
+      message: "?_?\n\n??? ?( ?-??) \n\n (?°?°)?? ???\n\n"
       lights: 0
       flames: 1
     - subject: "Celebratory message"

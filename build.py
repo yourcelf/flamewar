@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import os
 
@@ -62,19 +63,34 @@ class Card(object):
         return self.im.save(filename, fmt)
 
 class GoalCard(Card):
-    def __init__(self, goal_type, requirements, goal, *args, **kwargs):
+    def __init__(self, goal_type, goal, lights, *args, **kwargs):
         super(GoalCard, self).__init__(*args, **kwargs)
         self.load_background(os.path.join(BASE, "images", "goal.png"))
         self.draw_wrapped_text(goal_type.upper(), ((0.32, 0.64), (2.22, 0.86)), font_size=48)
         self.draw_wrapped_text(goal, ((0.33, 0.96), (2.25, 1.95)), font_size=40)
-        self.draw_wrapped_text(requirements, ((0.29, 2.41), (2.25, 3.18)), font_size=36)
+        # Draw stars
+        rows = 2 if lights > 4 else 1
+        star = Image.open(os.path.join(BASE, "images", "light.png"))
+        star_dims = (0.25, 0.25)
+        box = ((0.29, 2.41), (2.25, 3.18))
+        start_x = box[0][0] + (box[1][0] - box[0][0]) / 2 - star_dims[0] * (lights/rows/2.0)
+        start_y = box[1][0] + (box[1][1] - box[1][0]) / 2 - star_dims[1] * (rows/2.0)
+        for r in range(rows):
+            for i in range(lights / rows):
+                dims = [int(self.density * a) for a in (
+                    start_x + star_dims[0] * i,
+                    start_y + star_dims[1] * r,
+                    start_x + star_dims[0] * (i + 1),
+                    start_y + star_dims[1] * (r + 1),
+                )]
+                self.im.paste(star, dims)
 
 class EmailCard(Card):
     def __init__(self, subject, message, lights, flames, *args, **kwargs):
         super(EmailCard, self).__init__(*args, **kwargs)
         self.load_background(os.path.join(BASE, "images", "email.png"))
-        self.draw_wrapped_text(str(flames), ((1.71, 0.27), (1.86, 0.39)), font_size=36)
-        self.draw_wrapped_text(str(lights), ((1.97, 0.27), (2.25, 0.39)), font_size=36)
+        self.draw_wrapped_text(str(flames), ((1.55, 0.18), (1.86, 0.39)), font_size=64)
+        self.draw_wrapped_text(str(lights), ((1.97, 0.18), (2.25, 0.39)), font_size=64)
         self.draw_wrapped_text(subject, ((0.30, 0.43), (2.16, 1.59)), font_size=36)
         self.draw_wrapped_text(message, ((0.27, 0.70), (2.27, 3.25)), font_size=36)
 
@@ -103,23 +119,28 @@ def build():
         defs = yaml.load(fh)
 
     count = 0
-    for goaltype, goalinfo in defs['goals'].items():
-        for goal in goalinfo['cards']:
-            GoalCard(goaltype, goalinfo['requirements'], goal).save(
+    for goal_type, goalinfo in defs['goals'].items():
+        for card in goalinfo['cards']:
+            GoalCard(
+                lights=goalinfo['lights'],
+                goal_type=goal_type,
+                goal=card,
+            ).save(
                 os.path.join(out, "goal-%s.png" % count)
             )
             count += 1
 
     count = 0
     for email in defs['action']['email']:
-        print email['message']
         EmailCard(**email).save(os.path.join(out, "email-%s.png" % count))
         count += 1
 
     count = 0
-    for interrupt in defs['action']['interrupt']:
-        InterruptCard(**interrupt).save(os.path.join(out, "interrupt-%s.png" % count))
-        count += 1
+    # Double-up on interrupt cards.
+    for i in range(2):
+        for interrupt in defs['action']['interrupt']:
+            InterruptCard(**interrupt).save(os.path.join(out, "interrupt-%s.png" % count))
+            count += 1
 
     count = 0
     for attention in defs['attention']:
