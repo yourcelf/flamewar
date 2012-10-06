@@ -26,39 +26,39 @@ goals:
       - "Group retreat! Schedule a weekend where everyone can be there for 8 hours."
       - "My work rescheduled me.  Can we change the meeting time?"
 attention:
-  - "A meeting's been canceled!  You have lots of time for email. Read 4."
-  - You got fired. Read 4.
-  - Insomnia... Read 4.
-  - No one came to your office hours!  Read 4.
-  - That cup of coffee has done wonders for your productivity.  Read 4.
-  - You've been so efficient today.  Read 4.
-  - "Just another day at the office.  Read 3."
-  - Dentist appointment got canceled.  Read 3. But brush your teeth.
-  - Waiting in doctor's office.  Read 3 on your mobile.
-  - "Public transportation with wi-fi.  Read 3."
-  - The office gossip stopped by.  you are unfortunately occupied.  Read 2.
-  - You have to breastfeed your child.  Read 2.
-  - Software updates took all afternoon.  Read 2.
-  - Morning traffic was crazy, got to work late.  Read 2.
-  - Stuck in a meeting.  Read 1.
-  - Spilled soup on your shirt, and need to clean it before meeting with  supervisor.  Read 1.
-  - Called in to work an extra shift. Read 1.
-  - Sun, cool breeze, new buds on the trees.... Read 1.
-  - You have to pick your child up at swim practice.  Read 0.
-  - "You've gone on vacation to Hawaii. Read 0."
-  - Happy hour!  Leave work early. Read 0.
-  - Email account got hacked, you can't log in.  Read 0.
-  - Internet is down.  Read 0.
-  - Your laptop was stolen! Read 0.
+  - "A meeting's been canceled!  You have lots of time for email. Read 4, Send 2."
+  - You got fired. Read 4, Send 2.
+  - Insomnia... Read 4, Send 2.
+  - No one came to your office hours!  Read 4, Send 2.
+  - That cup of coffee has done wonders for your productivity.  Read 4, Send 2.
+  - You've been so efficient today.  Read 4, Send 2.
+  - "Just another day at the office.  Read 3, Send 2."
+  - Dentist appointment got canceled.  Read 3, Send 2. But brush your teeth.
+  - Waiting in doctor's office.  Read 3 on your mobile, Send 2.
+  - "Public transportation with wi-fi.  Read 3, Send 2."
+  - The office gossip stopped by.  you are unfortunately occupied.  Read 2, Send 2.
+  - You have to breastfeed your child.  Read 2, Send 2.
+  - Software updates took all afternoon.  Read 2, Send 2.
+  - Morning traffic was crazy, got to work late.  Read 2, Send 2.
+  - Stuck in a meeting.  Read 1, Send 2.
+  - Spilled soup on your shirt, and need to clean it before meeting with  supervisor.  Read 1, Send 2.
+  - Called in to work an extra shift. Read 1, Send 1.
+  - Sun, cool breeze, new buds on the trees.... Read 1, Send 2.
+  - You have to pick your child up at swim practice.  Read 0, Send 0.
+  - You've gone on vacation to Hawaii. Read 0, Send 0.
+  - Happy hour!  Leave work early. Read 0, Send 0.
+  - Email account got hacked, you can't log in.  Read 0, Send 0.
+  - Internet is down.  Read 0, Send 0.
+  - Your laptop was stolen! Read 0, Send 0.
 
 action:
   interrupt:
     - title: "FLAME WAR!"
       description: "The old goal is superceded by this goal.  The new goal is  to get at least 10 flames!! Immediately play up to 2 emails which have  more flames than lights."
     - title: "Epic thread!"
-      description: "Double the required number of lights, but allow double  the flames, for the goal card.  Play two email cards immediately."
+      description: "Double the required number of lights, but allow double the flames, for the goal card.  Play two email cards immediately."
     - title: "Misdelivered!"
-      description: "Play on any email currently on the table.  The address  was mistyped.  Take the email out of play, and discard any read chips."
+      description: "Play on any email currently on the table.  The address was mistyped.  Take the email out of play."
     - title: "Voluntold!"
       description: "Play on a person whom you are volunteering to do work.  That person must immediately read two emails and send two emails."
 
@@ -78,18 +78,18 @@ action:
       flames: 1
     - subject: "Destructive comment"
       message: "Why did you do that?? You are a $%&#*$, an @!@&)*#, and a !#*$P%! Oh yeah, and you suck at organizing."
-      lights: 1
+      lights: 0
       flames: 2
     - subject: "Auto reply"
       message: "I'm out of the office. I will read your message when I return."
       lights: 0
       flames: 0
     - subject: "Virus!"
-      message: "I love you! Open the attachment to see the message. Each player that reads this email subtracts 2 points from their score for this round."
+      message: "I love you! Open the attachment to see the message. Any player that reads this email subtracts 2 points from their score for this round."
       lights: 0
       flames: 1
     - subject: "Phishing scam!"
-      message: "YOUR ACCOUNT HAS BEEN FROZEN.  Please click here to update your password.  You will not be able to make or receive any payments until you do. Each player that reads this email subtracts 2 points from their score for this round."
+      message: "YOUR ACCOUNT HAS BEEN FROZEN.  Please click here to update your password.  You will not be able to make or receive any payments until you do. Any player that reads this email subtracts 2 points from their score for this round."
       lights: 0
       flames: 1
     - subject: "Overshare!"
@@ -101,13 +101,13 @@ action:
       lights: -1
       flames: 0
     - subject: "Wall of text"
-      message: "So I've been thinking, the real reason why we're having this difficulty here is that we aren't thinking about the problem at the right meta level, I mean there can be separate meta levels at the same time, but what I'm talking about is the meta level that is right outside the level at which we're currently thinking, but not to get too meta on you here, it's not like inception whang or something like that, it's more just the feeling that\nREQUIRES 2 READ CHIPS FROM EACH PLAYER."
+      message: "So I've been thinking, the real reason why we're having this difficulty here is that we aren't thinking about the problem at the right meta level, I mean there can be separate meta levels at the same time, but what I'm talking about is the meta level that is right outside the level at which we're currently thinking, but not to get too meta on you here, it's not like inception whang or something like that, it's more just the feeling that\n"
       lights: 1
       flames: 1
     - subject: "Spam"
       message: "Enlarge your m3mb3r with some \\/|4gR/\\. Women agree: size does matter! Don't be a chump with a stump when you hump."
       lights: 0
-      flames: 0
+      flames: 1
     - subject: "Racist forward"
       message: "Did you know candidate Bob is a closeted nose picker and a Canadian!? He has big ears, which makes him a socialist anarchist nazi!"
       lights: -2
@@ -217,7 +217,7 @@ action:
       lights: 1
       flames: 0
     - subject: "Large attachment"
-      message: "Message size: 14MB.\n\nLoading.........................\n\n\nREQUIRES 2 READ CHIPS FROM EACH PLAYER"
+      message: "Message size: 14MB.\n\nLoading........................."
       lights: 0
       flames: 0
     - subject: "Workgroup suggestion"
