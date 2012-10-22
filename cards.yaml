@@ -1,13 +1,13 @@
 goals:
   share info:
-    lights: 2
+    lights: 1
     cards:
       - "We've been invited to a community event!  It's awesome, let's go."
       - "The city has changed recycling policy.  From now on, #1 and #2 plastics go out on Monday, and #3 and #4 plastics go out on Tuesday.  Paper..."
       - "Article on new oppresive policy being passed by the city"
       - "A member just quit!"
   express emotion:
-    lights: 4
+    lights: 2
     cards:
       - "YOU PEOPLE ARE MAKING ME CRAZY"
       - "Why do I have to clean the sink, every damn time?"
@@ -15,13 +15,13 @@ goals:
       - "No one takes into account what I have to say! You guys are authoritarian!"
       - "I am bored!"
   decide something:
-    lights: 6
+    lights: 3
     cards:
       - "URGENT!  The water heater exploded; we need a plumber. Authorize $1000 to buy a new one?"
       - "A visitor from out of town is coming tomorrow.  Can we host them?"
       - "Should we attend this protest and show our solidarity?"
   schedule something:
-    lights: 8
+    lights: 4
     cards:
       - "Group retreat! Schedule a weekend where everyone can be there for 8 hours."
       - "My work rescheduled me.  Can we change the meeting time?"
@@ -85,11 +85,11 @@ action:
       lights: 0
       flames: 0
     - subject: "Virus!"
-      message: "I love you! Open the attachment to see the message. Any player that reads this email subtracts 2 points from their score for this round."
+      message: "I love you! Open the attachment to see the message. Any player that reads this email subtracts 2 points from their score."
       lights: 0
       flames: 1
     - subject: "Phishing scam!"
-      message: "YOUR ACCOUNT HAS BEEN FROZEN.  Please click here to update your password.  You will not be able to make or receive any payments until you do. Any player that reads this email subtracts 2 points from their score for this round."
+      message: "YOUR ACCOUNT HAS BEEN FROZEN.  Please click here to update your password.  You will not be able to make or receive any payments until you do. Any player that reads this email subtracts 2 points from their score."
       lights: 0
       flames: 1
     - subject: "Overshare!"
@@ -164,7 +164,7 @@ action:
       message: "Hey Pedro. Remember when we did that thing that other day with those other people. HA HA"
       lights: 0
       flames: 0
-    - subject: "Travel"
+    - subject: "Coordinating travel"
       message: "We should all carpool to the conference in Michigan over the weekend"
       lights: 1
       flames: 0
@@ -196,9 +196,9 @@ action:
       message: "Thanks for your feedback, Jane.  What do the rest of you think? \n\nJane wrote:\n> Just between you and me,\n> I think this is a\n>  mistake..."
       lights: 1
       flames: 1
-    - subject: "I agree"
+    - subject: "Plus one without comment"
       message: "+1"
-      lights: 1
+      lights: 0
       flames: 0
     - subject: "I disagree"
       message: "-1.  I've got some general concerns with this direction.  I'd prefer it if we...."
@@ -263,5 +263,69 @@ action:
     - subject: "Thoughts?"
       message: "I've been thinking that the really important thing is for us to reconsider what our fundamental approach to life is.  I'm not sure I really want to be part of a 'society' anymore, but I'm not sure.  I mean, the capitalist system is really the root of the problem, and maybe what we should do is just address that.  I'm not sure that we can really be a true collective as long as we're continuing to participate in a larger system of messed up power relationships.\n\nThoughts?"
       lights: 1
+      flames: 1
+    - subject: "Nice pat on the back"
+      message: "Hey Sandy, I just wanted to let you know that I thought you handled that really well today.  You were very diplomatic and fair.  Nice work."
+      lights: 1
+      flames: 0
+    - subject: "Founder syndrome"
+      message: "That's not the way we've done it before, no way am I going to let us do it that way."
+      lights: 1
+      flames: 1
+    - subject: "Miscommunication"
+      message: "I actually did get in touch with Cathy.  My apologies for not CC'ing you on the emails!"
+      lights: -1
+      flames: 0
+    - subject: "Boring announcement"
+      message: "Don't forget.  This week's mandatory seminar is being given by Dr. Nose-Picker on The Art of Walking Slowly."
+      lights: 0
+      flames: 1
+    - subject: "Deadline exasperation"
+      message: "Since we need at least 25 volunteers to bake cookies and zero people have signed up, I'm extending the deadline to Monday to submit your nominations. Please get off your rear and sign up. Come on, people!"
+      lights: 0
+      flames: 1
+    - subject: "Request"
+      message: "I'm leading a workshop on how to write a resume.  Would you be willing to share resumes that you've written in the past?  thanks!"
+      lights: 1
+      flames: 0
+    - subject: "Good news!"
+      message: "They are running a really good special on yummy sandwiches at the local cafe this week!"
+      lights: 1
+      flames: 0
+    - subject: "Bad news!"
+      message: "We lost our largest funder. Time to tighten our belts."
+      lights: 1
+      flames: 1
+    - subject: "Nice interaction"
+      message: "It was great talking with you the other day.  Here's the link to the website I was telling you about: http://intertwinkles.org"
+      lights: 1
+      flames: 0
+    - subject: "Coffee break"
+      message: "All points bulletin: coffee in the kitchen at 11 o'clock. I brought cookies."
+      lights: 0
+      flames: -2
+    - subject: "Conspiracy"
+      message: "Check out this shocking video which *proves* that the Big Dig was an Inside Job!"
+      lights: -1
+      flames: 1
+    - subject: "Passive aggression"
+      message: "Whoever left the peanut butter jar out again, don't worry; I don't mind. Don't worry about me; I was just sick for half the night after getting food poisoning from the rancid peanuts. I don't want you to have to trouble yourself with cleaning up like any decent person would!"
+      lights: 0
+      flames: 2
+    - subject: "Unreasonable deadline"
+      message: "I need everyone to respond to this 25 question survey in the next 35 minutes."
+      lights: 0
+      flames: 1
+    - subject: "Timezone Fail"
+      message: "Where is everyone?  It's 3pm...\n\n-New York Steve\n\nChicago Sue wrote:\n> 3pm works for me.\n>\n> California Jessie wrote:\n>> When shall we meet?  I propose 3pm.\n>>"
+      lights: -1
+      flames: 1
+    - subject: "But it wasn't a yes/no ?"
+      message: "Yeah, that sounds good.\n\nQuestioner wrote:\n    > Before I can do this update I\n    > need to know:\n        > \n        > - Did we want this feature to \n        >   be a multi- or proto-widget?\n        > - When do we need this update\n        >   pushed to the live server?\n        > - When can I take the server\n        >   down for a few minutes?"
+      lights: 0
+      flames: 1
+    - subject: "Vague request for action"
+      message: "To: John, Valentin, Rachel, Louisa, Jorge, Lena, Bill\n\nSomeone needs to take care of the mess in the kitchen.\n\nRegards."
+      lights: 0
       flames: 1
 

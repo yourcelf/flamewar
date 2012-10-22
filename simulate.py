@@ -46,7 +46,7 @@ class Game(object):
                     self.email_pile.append(
                             Email(email['lights'], email['flames'], email['subject'])
                     )
-        self.email_pile += self.email_pile[:30]
+        #self.email_pile += self.email_pile[:30]
 
         # Interrupts
         self.email_pile += [
@@ -146,7 +146,7 @@ class Goal(object):
 
 class Email(object):
     def __init__(self, lights, flames, flavor=None):
-        self.lights = lights * 2
+        self.lights = lights
         self.flames = flames
         self.flavor = flavor
         self.read = False
@@ -306,12 +306,12 @@ def mass_run():
             ('winning scores', winning_scores),
             ('flameouts', flameouts),
             ('# of won goals', won_goals),
-#            ('# of rounds', rounds),
-#            ('won flamewars', won_flamewars),
-#            ('lost flamewars', lost_flamewars),
+            ('# of rounds', rounds),
+            ('won flamewars', won_flamewars),
+            ('lost flamewars', lost_flamewars),
             ('remaining email', remaining_email),
             ]:
-        pyplot.subplot(3, 2,  i)
+        pyplot.subplot(3, 3,  i)
         i += 1
         pyplot.title(title)
         pyplot.hist(thing)
