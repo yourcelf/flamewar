@@ -85,10 +85,14 @@ class GoalCard(Card):
                 )]
                 self.im.paste(star, dims)
 
-class EmailCard(Card):
+class BlankEmailCard(Card):
+    def __init__(self, *args, **kwargs):
+        super(BlankEmailCard, self).__init__(*args, **kwargs)
+        self.load_background(os.path.join(BASE, "images", "email.png"))
+
+class EmailCard(BlankEmailCard):
     def __init__(self, subject, message, lights, flames, *args, **kwargs):
         super(EmailCard, self).__init__(*args, **kwargs)
-        self.load_background(os.path.join(BASE, "images", "email.png"))
         self.draw_wrapped_text(str(flames), ((1.55, 0.18), (1.86, 0.39)), font_size=64)
         self.draw_wrapped_text(str(lights), ((1.97, 0.18), (2.25, 0.39)), font_size=64)
         self.draw_wrapped_text(subject, ((0.30, 0.43), (2.16, 1.59)), font_size=36)
@@ -126,25 +130,28 @@ def build():
                 goal_type=goal_type,
                 goal=card,
             ).save(
-                os.path.join(out, "goal-%s.png" % count)
+                os.path.join(out, "goal-%02d.png" % count)
             )
             count += 1
 
     count = 0
     for email in defs['action']['email']:
-        EmailCard(**email).save(os.path.join(out, "email-%s.png" % count))
+        EmailCard(**email).save(os.path.join(out, "email-%02d.png" % count))
+        count += 1
+    for i in range(5):
+        BlankEmailCard().save(os.path.join(out, "email-%02d.png" % count))
         count += 1
 
     count = 0
     # Double-up on interrupt cards.
     for i in range(2):
         for interrupt in defs['action']['interrupt']:
-            InterruptCard(**interrupt).save(os.path.join(out, "interrupt-%s.png" % count))
+            InterruptCard(**interrupt).save(os.path.join(out, "interrupt-%02d.png" % count))
             count += 1
 
     count = 0
     for attention in defs['attention']:
-        AttentionCard(attention).save(os.path.join(out, "attention-%s.png" % count))
+        AttentionCard(attention).save(os.path.join(out, "attention-%02d.png" % count))
         count += 1
 
 if __name__ == "__main__":
