@@ -30,7 +30,7 @@ class Game(object):
         self.interrupt_discard = []
         self.attention_pile    = []
         self.attention_discard = []
-        data = yaml.load(
+        data = yaml.safe_load(
             open(os.path.join(os.path.dirname(__file__), "cards.yaml"))
         )
         # Goals

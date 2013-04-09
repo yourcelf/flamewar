@@ -33,15 +33,30 @@ def print_prep():
                 (first.size[0] * 3, first.size[1] * 3), 
                 (255,255,255,255)
         )
+        back = Image.new(
+                'RGBA',
+                (first.size[0] * 3, first.size[1] * 3),
+                (255,255,255,255)
+        )
         for j in range(0, 9):
             if i + j < len(images):
                 im = Image.open(images[i + j])
-                out.paste(Image.open(images[i + j]), 
-                        (
+                out.paste(im, (
                             im.size[0] * (j % 3),
                             im.size[1] * (int(j / 3)),
                             first.size[0] * (j % 3 + 1),
                             first.size[1] * (int(j / 3) + 1),
                         )
                 )
-        out.save(os.path.join(outdir, "card-%i.png" % i))
+                backing_path = os.path.join(BASE, "images", 
+                        os.path.basename(images[i + j]).split("-")[0] + "-backing.png")
+                back_im = Image.open(backing_path)
+                back.paste(back_im, (
+                            back_im.size[0] * (3 - (j % 3 + 1)),
+                            back_im.size[1] * (int(j / 3)),
+                            back_im.size[0] * (3 - (j % 3)),
+                            back_im.size[1] * (int(j / 3) + 1),
+                        )
+                )
+        out.save(os.path.join(outdir, "card-%02d-front.png" % i))
+        back.save(os.path.join(outdir, "card-%02d-back.png" % i))
